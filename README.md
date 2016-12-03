@@ -36,6 +36,7 @@ export class App {
 #### barLabel (type: string)
 
 - The variable containing the label displayed to the left of the bar. 
+
 ## Run the example application locally
 - `git clone https://github.com/rnadler/password-strength-bar.git`
 - `cd password-strength-bar`
