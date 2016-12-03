@@ -17,28 +17,28 @@
     "type": "git",
     "url": "git+https://github.com/rnadler/password-strength-bar.git"
   },
-  "author": "Bob Nadler",
-  "license": "ISC",
+  "author": "Robert Nadler",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rnadler/password-strength-bar/issues"
   },
   "homepage": "https://github.com/rnadler/password-strength-bar#readme",
   "dependencies": {
-    "@angular/common": "2.2.4",
-    "@angular/compiler": "2.2.4",
-    "@angular/core": "2.2.4",
-    "@angular/forms": "2.2.4",
-    "@angular/http": "2.2.4",
-    "@angular/platform-browser": "2.2.4",
-    "@angular/platform-browser-dynamic": "2.2.4",
-    "@angular/router": "3.2.4",
+    "@angular/common": "~2.2.0",
+    "@angular/compiler": "~2.2.0",
+    "@angular/core": "~2.2.0",
+    "@angular/forms": "~2.2.0",
+    "@angular/http": "~2.2.0",
+    "@angular/platform-browser": "~2.2.0",
+    "@angular/platform-browser-dynamic": "~2.2.0",
+    "@angular/router": "~3.2.0",
 
-    "angular-in-memory-web-api": "0.1.16",
-    "systemjs": "0.19.41",
+    "angular-in-memory-web-api": "~0.1.15",
+    "systemjs": "0.19.40",
     "core-js": "^2.4.1",
     "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.0-rc.4",
-    "zone.js": "^0.7.2"
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "^0.6.26"
   },
   "devDependencies": {
     "concurrently": "^3.1.0",

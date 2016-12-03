@@ -1,0 +1,1 @@
+exports.PasswordStrengthBar = require('./app/passwordStrengthBar').PasswordStrengthBar;

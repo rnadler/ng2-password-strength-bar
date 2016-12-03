@@ -1,0 +1,9 @@
+app/app*.*
+app/main.*
+app/*.spec.*
+index.html
+karma*.*
+node_modules
+.travis.yml
+systemjs.config.js
+.gitignore
