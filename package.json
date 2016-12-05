@@ -12,7 +12,7 @@
     "test-once": "npm run build && tsc && karma start karma.conf.js --single-run",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "build": "rm -rf lib && tsc -p src || true"
+    "build": "rm -rf lib && tsc -p src"
   },
   "typings": "./index.d.ts",
   "repository": {
@@ -63,6 +63,7 @@
 
     "@types/node": "^6.0.46",
     "@types/jasmine": "^2.5.36",
-    "@types/selenium-webdriver": "^2.53.33"
+    "@types/selenium-webdriver": "^2.53.33",
+    "@types/core-js": "^0.9.35"
   }
 }
