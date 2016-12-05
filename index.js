@@ -1,1 +1,1 @@
-exports.PasswordStrengthBar = require('./app/passwordStrengthBar').PasswordStrengthBar;
+exports.PasswordStrengthBar = require('./lib/passwordStrengthBar').PasswordStrengthBar;

@@ -38,6 +38,9 @@
             },
             rxjs: {
                 defaultExtension: 'js'
+            },
+            lib: {
+                defaultExtension: 'js'
             }
         }
     });

@@ -1,1 +1,1 @@
-export * from './app/passwordStrengthBar';
+export * from './lib/passwordStrengthBar';

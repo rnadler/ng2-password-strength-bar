@@ -1,5 +1,5 @@
 
-import { PasswordStrengthBar } from './passwordStrengthBar'
+import { PasswordStrengthBar } from '../lib/passwordStrengthBar'
 
 let psb: PasswordStrengthBar;
 
