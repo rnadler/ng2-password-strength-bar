@@ -8,10 +8,11 @@
     "experimentalDecorators": true,
     "lib": [ "es2015", "dom" ],
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "types": ["@types/jasmine"]
   },
   "exclude": [
-    "node_modules/*",
+    "node_modules",
     "**/*-aot.ts"
   ]
 }

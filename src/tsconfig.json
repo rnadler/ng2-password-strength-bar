@@ -8,16 +8,10 @@
     "removeComments": true,
     "sourceMap": true,
     "outDir": "../lib",
-    "declaration": true,
-    "typeRoots": [
-      "../node_modules/@types"
-    ],
-    "types": [
-      "core-js"
-    ]
+    "declaration": true
   },
   "exclude": [
-    "node_modules/*",
+    "node_modules",
     "**/*-aot.ts"
   ]
 }

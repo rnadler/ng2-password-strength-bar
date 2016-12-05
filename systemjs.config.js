@@ -41,6 +41,9 @@
             },
             lib: {
                 defaultExtension: 'js'
+            },
+            "": {
+                defaultExtension: 'js'
             }
         }
     });

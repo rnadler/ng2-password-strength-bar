@@ -4,7 +4,7 @@ import { By, BrowserModule}           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import { App } from './app';
-import { PasswordStrengthBar } from '../lib/passwordStrengthBar'
+import { PasswordStrengthBar } from '../index'
 
 describe('App', function () {
     let de: DebugElement;

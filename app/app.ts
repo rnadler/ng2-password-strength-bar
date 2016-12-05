@@ -1,7 +1,7 @@
 import {Component, NgModule} from '@angular/core'
 import { FormsModule } from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
-import { PasswordStrengthBar } from '../lib/passwordStrengthBar';
+import { PasswordStrengthBar } from '../index';
 
 @Component({
     selector: 'my-app',
