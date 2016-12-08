@@ -8,5 +8,3 @@ systemjs.config.js
 .gitignore
 .idea
 tsconfig.json
-/**/*.ts
-!/**/*.d.ts
