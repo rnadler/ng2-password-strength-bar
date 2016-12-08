@@ -12,7 +12,7 @@ import { PasswordStrengthBar } from '../index';
             <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
                  [(ngModel)]="account.password" #password="ngModel" 
                  minlength="5" maxlength="50" required>
-            <password-strength-bar [passwordToCheck]="account.password" [barLabel]="barLabel"></password-strength-bar>
+            <ng2-password-strength-bar [passwordToCheck]="account.password" [barLabel]="barLabel"></ng2-password-strength-bar>
         </form>        
     </div>
   `,

@@ -1,5 +1,5 @@
 {
-  "name": "password-strength-bar",
+  "name": "ng2-password-strength-bar",
   "version": "1.0.0",
   "description": "Angular 2 Password Strength Bar",
   "scripts": {
@@ -19,14 +19,14 @@
   "typings": "./index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rnadler/password-strength-bar.git"
+    "url": "git+https://github.com/rnadler/ng2-password-strength-bar.git"
   },
   "author": "Robert Nadler",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rnadler/password-strength-bar/issues"
+    "url": "https://github.com/rnadler/ng2-password-strength-bar/issues"
   },
-  "homepage": "https://github.com/rnadler/password-strength-bar#readme",
+  "homepage": "https://github.com/rnadler/ng2-password-strength-bar#readme",
   "dependencies": {
     "@angular/common": "~2.2.0",
     "@angular/compiler": "~2.2.0",

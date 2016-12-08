@@ -1,7 +1,7 @@
 import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
 
 @Component({
-    selector: 'password-strength-bar',
+    selector: 'ng2-password-strength-bar',
     styles: [`
     ul#strengthBar {
         display:inline;
