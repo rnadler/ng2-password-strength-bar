@@ -69,7 +69,7 @@ export class App {
 - `git clone https://github.com/rnadler/ng2-password-strength-bar.git`
 - `cd ng2-password-strength-bar`
 - `npm install`
-- `npm start` # Browser should open automatically
+- `npm start` # Browser should open automatically on http://localhost:3000
 
 ## Run the tests locally
 - Same as above, except for the last step do:
