@@ -8,7 +8,7 @@ This an Angular 2 implementation of [AngularJS Directive to test the strength of
 
 ## Install in your project
 
-`npm install --save password-strength-bar`
+`npm install password-strength-bar --save`
 
 ## Using the Component
 ### Add Component to HTML 
@@ -46,5 +46,6 @@ export class App {
 ## Run the tests locally
 - Same as above, except for the last step do:
 - `npm run test-once`
+### License
 
-
+[MIT](https://tldrlegal.com/license/mit-license)
