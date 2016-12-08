@@ -55,7 +55,7 @@ export class App {
 ```
 ### Input Parameters 
 
-<ng2-password-strength-bar \[**passwordToCheck**\]="account.password"  \[**barLabel**\]="barLabel"> </ng2-password-strength-bar>
+\<ng2-password-strength-bar \[**passwordToCheck**\]="account.password"  \[**barLabel**\]="barLabel"\> \</ng2-password-strength-bar\>
 
 #### passwordToCheck (type: string)
 
@@ -74,6 +74,7 @@ export class App {
 ## Run the tests locally
 - Same as above, except for the last step do:
 - `npm run test-once`
+
 ### License
 
 [MIT](https://tldrlegal.com/license/mit-license)
