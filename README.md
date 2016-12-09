@@ -1,6 +1,7 @@
 # ng2-password-strength-bar
 
 [![Build Status](https://travis-ci.org/rnadler/ng2-password-strength-bar.svg?branch=master)](https://travis-ci.org/rnadler/ng2-password-strength-bar)
+[![npm version](https://badge.fury.io/js/ng2-password-strength-bar.svg)](https://badge.fury.io/js/ng2-password-strength-bar)
 
 This an Angular 2 implementation of [AngularJS Directive to test the strength of a password](https://blog.brunoscopelliti.com/angularjs-directive-to-test-the-strength-of-a-password/) by **Bruno Scopelliti**. See [Angular 2 Password Strength Bar](http://rdn-consulting.com/blog/2016/09/28/angular-2-password-strength-bar/) for details of the changes.
 
@@ -17,11 +18,15 @@ import { PasswordStrengthBar } from 'ng2-password-strength-bar';
 ...
 @NgModule({
  ...
-  imports: [
-    BrowserModule,
-    PasswordStrengthBar,
-  ...
-  ],
+   declarations: [
+        AppComponent,
+        PasswordStrengthBar,
+        ...
+    ],
+    imports: [
+      BrowserModule,
+      FormsModule,
+      ...
  ...
 })
 export class AppModule {}
@@ -73,7 +78,7 @@ export class App {
 
 ## Run the tests locally
 - Same as above, except for the last step do:
-- `npm run test-once`
+- `npm run test-once`  # Defaults to a Firefox browser
 
 ### License
 
