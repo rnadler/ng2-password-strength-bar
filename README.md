@@ -3,7 +3,9 @@
 [![Build Status](https://travis-ci.org/rnadler/ng2-password-strength-bar.svg?branch=master)](https://travis-ci.org/rnadler/ng2-password-strength-bar)
 [![npm version](https://badge.fury.io/js/ng2-password-strength-bar.svg)](https://badge.fury.io/js/ng2-password-strength-bar)
 
-This an Angular 2 implementation of [AngularJS Directive to test the strength of a password](https://blog.brunoscopelliti.com/angularjs-directive-to-test-the-strength-of-a-password/) by **Bruno Scopelliti**. See [Angular 2 Password Strength Bar](http://rdn-consulting.com/blog/2016/09/28/angular-2-password-strength-bar/) for details of the changes.
+This an Angular 2 implementation of [AngularJS Directive to test the strength of a password](https://blog.brunoscopelliti.com/angularjs-directive-to-test-the-strength-of-a-password/). 
+- See [Angular 2 Password Strength Bar](http://rdn-consulting.com/blog/2016/09/28/angular-2-password-strength-bar/) for details of the changes since the Angular 1 original.
+- See [Publishing an Angular 2 Component NPM Package](http://rdn-consulting.com/blog/2016/12/09/publishing-an-angular-2-component-npm-package/) for some explanation of this project.
 
 [Try it live!](https://plnkr.co/edit/z0x5gG?p=preview)
 
