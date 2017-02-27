@@ -31,7 +31,7 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
     </div>
 `
 })
-export class PasswordStrengthBar implements OnChanges {
+export class PasswordStrengthBarComponent implements OnChanges {
     @Input() passwordToCheck: string;
     @Input() barLabel: string;
     bar0: string;
@@ -96,7 +96,7 @@ export class PasswordStrengthBar implements OnChanges {
     }
 
     getStrengthIndexAndColor(password: string) {
-        return this.getColor(PasswordStrengthBar.measureStrength(password));
+        return this.getColor(PasswordStrengthBarComponent.measureStrength(password));
     }
 
     ngOnChanges(changes: {[propName: string]: SimpleChange}): void {
