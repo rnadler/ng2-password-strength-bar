@@ -1,7 +1,6 @@
+import { PasswordStrengthBarComponent } from '../index'
 
-import { PasswordStrengthBar } from '../index'
-
-let psb: PasswordStrengthBar;
+let psb: PasswordStrengthBarComponent;
 
 function testPassword(password: string, index: number, color: string) {
     let c = psb.getStrengthIndexAndColor(password);
@@ -9,10 +8,10 @@ function testPassword(password: string, index: number, color: string) {
     expect(c.col).toBe(color);
 }
 
-describe('PasswordStrengthBar', () => {
+describe('PasswordStrengthBarComponent', () => {
 
     beforeEach(() => {
-        psb = new PasswordStrengthBar();
+        psb = new PasswordStrengthBarComponent();
     });
 
     it('Should expect weak bar', () => {

@@ -1,7 +1,7 @@
-import {Component, NgModule} from '@angular/core'
+import { Component, NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
-import { PasswordStrengthBar } from '../index';
+import { BrowserModule } from '@angular/platform-browser';
+import { PasswordStrengthBarModule } from '../index';
 
 @Component({
     selector: 'my-app',
@@ -17,8 +17,7 @@ import { PasswordStrengthBar } from '../index';
     </div>
   `,
 })
-
-export class App {
+export class AppComponent {
     public account = {
         password: <string>null
     };
@@ -28,12 +27,12 @@ export class App {
 @NgModule({
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        PasswordStrengthBarModule,
     ],
     declarations: [
-        App,
-        PasswordStrengthBar
+        AppComponent,
     ],
-    bootstrap: [ App ]
+    bootstrap: [ AppComponent ]
 })
 export class AppModule {}

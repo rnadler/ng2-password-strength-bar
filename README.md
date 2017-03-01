@@ -16,24 +16,24 @@ This an Angular 2 implementation of [AngularJS Directive to test the strength of
 ## Using the Component
 ### Add Component to Module imports
 ```
-import { PasswordStrengthBar } from 'ng2-password-strength-bar';
+import { PasswordStrengthBarModule } from 'ng2-password-strength-bar';
 ...
 @NgModule({
  ...
    declarations: [
         AppComponent,
-        PasswordStrengthBar,
         ...
     ],
     imports: [
       BrowserModule,
       FormsModule,
+      PasswordStrengthBarModule,
       ...
  ...
 })
 export class AppModule {}
 ```
-### Add Component to your Application 
+### Add Component to your Application
 ```
 @Component({
     selector: 'my-app',
@@ -42,13 +42,13 @@ export class AppModule {}
     <div>
        <form name="myForm" novalidate>
             <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
-                 [(ngModel)]="account.password" #password="ngModel" 
+                 [(ngModel)]="account.password" #password="ngModel"
                  minlength="5" maxlength="50" required>
-            <ng2-password-strength-bar 
-                [passwordToCheck]="account.password" 
+            <ng2-password-strength-bar
+                [passwordToCheck]="account.password"
                 [barLabel]="barLabel">
             </ng2-password-strength-bar>
-        </form>        
+        </form>
     </div>
   `,
 })
@@ -60,7 +60,7 @@ export class App {
     // ...
 }
 ```
-### Input Parameters 
+### Input Parameters
 
 \<ng2-password-strength-bar \[**passwordToCheck**\]="account.password"  \[**barLabel**\]="barLabel"\> \</ng2-password-strength-bar\>
 
@@ -70,7 +70,7 @@ export class App {
 
 #### barLabel (type: string)
 
-- The variable containing the label displayed to the left of the bar. 
+- The variable containing the label displayed to the left of the bar.
 
 ## Run the example application locally
 - `git clone https://github.com/rnadler/ng2-password-strength-bar.git`
