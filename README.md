@@ -15,7 +15,7 @@ This an Angular 2 implementation of [AngularJS Directive to test the strength of
 
 #### 1.1.0 Version Update Note
 
-If you upgrade from v1.0.x to v1.1.x you will need to change the import from PasswordStrengthBar to **PasswordStrengthBarModule** in your code.
+If you upgrade from v1.0.x to v1.1.x you will need to change the import from PasswordStrengthBar to **PasswordStrengthBarModule**. The module needs to be added to the **imports** section of the @NgModule metadata instead of the declarations.
 
 ## Using the Component
 ### Add Component to Module imports
