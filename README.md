@@ -13,6 +13,10 @@ This an Angular 2 implementation of [AngularJS Directive to test the strength of
 
 `npm install ng2-password-strength-bar --save`
 
+#### 1.1.0 Version Update Note
+
+If you upgrade from v1.0.x to v1.1.x you will need to change the import from PasswordStrengthBar to **PasswordStrengthBarModule** in your code.
+
 ## Using the Component
 ### Add Component to Module imports
 ```
