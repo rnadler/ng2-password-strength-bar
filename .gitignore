@@ -9,3 +9,7 @@ _test-output
 _temp
 lib
 src/**/*.js
+
+## ngc compiler files
+src/*.ngfactory.ts
+src/*.ngsummary.json
