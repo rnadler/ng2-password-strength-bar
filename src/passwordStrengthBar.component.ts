@@ -40,6 +40,7 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
 export class PasswordStrengthBarComponent implements OnChanges {
   @Input() passwordToCheck: string;
   @Input() barLabel: string;
+  @Input() barColors: Array<string>;
   bar0: string;
   bar1: string;
   bar2: string;
@@ -108,6 +109,12 @@ export class PasswordStrengthBarComponent implements OnChanges {
 
   ngOnChanges(changes: { [propName: string]: SimpleChange }): void {
     let password = changes['passwordToCheck'].currentValue;
+
+    // Accept custom colors if input is valid, otherwise last working collection will be used
+    if (this.barColors && this.barColors.length === 5) {
+      this.colors = this.barColors.slice();
+    }
+
     this.setBarColors(5, '#DDD');
     if (password) {
       let c = this.getStrengthIndexAndColor(password);

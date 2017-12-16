@@ -78,6 +78,12 @@ export class App {
 
 - The variable containing the label displayed to the left of the bar.
 
+#### barColors (type: Array<string>)
+
+- The variable can be used to define custom bar colors. This must be an Array of 5 strings!<br>
+Lowest security level picks `colors[0]`, ..., the highest picks `colors[4]`. Choose wisely ;-)
+
+
 ## Run the example application locally
 - `git clone https://github.com/rnadler/ng2-password-strength-bar.git`
 - `cd ng2-password-strength-bar`
