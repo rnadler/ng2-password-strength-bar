@@ -6,24 +6,24 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
     ul#strengthBar {
       display: inline;
       list-style: none;
-      margin: 0;
-      margin-left: 15px;
+      margin: 0 0 0 15px;
       padding: 0;
       vertical-align: 2px;
     }
 
-    .point:last {
-      margin: 0 !important;
-    }
-
-    .point {
+    ul#strengthBar .point {
       background: #DDD;
       border-radius: 2px;
       display: inline-block;
       height: 5px;
       margin-right: 1px;
       width: 20px;
-    }`],
+    }
+    
+    ul#strengthBar .point:last-child {
+      margin: 0;
+    }
+  `],
   template: `
     <div id="strength" #strength>
       <small>{{barLabel}}</small>
