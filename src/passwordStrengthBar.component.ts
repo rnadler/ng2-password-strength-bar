@@ -28,7 +28,7 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
     <div id="strength" #strength>
       <small>{{barLabel}}</small>
       <ul id="strengthBar">
-        <li class="point" [style.background-color]="bar0"></li>
+        <li id="bar0" class="point" [style.background-color]="bar0"></li>
         <li class="point" [style.background-color]="bar1"></li>
         <li class="point" [style.background-color]="bar2"></li>
         <li class="point" [style.background-color]="bar3"></li>
@@ -46,8 +46,20 @@ export class PasswordStrengthBarComponent implements OnChanges {
   bar2: string;
   bar3: string;
   bar4: string;
+  private barColorsChecked: boolean = false;
 
   private colors = ['#F00', '#F90', '#FF0', '#9F0', '#0F0'];
+
+  private checkBarColors(): void {
+    if (this.barColorsChecked) {
+      return;
+    }
+    // Accept custom colors if input is valid, otherwise last working collection will be used
+    if (this.barColors && this.barColors.length === 5) {
+      this.colors = this.barColors;
+    }
+    this.barColorsChecked = true;
+  }
 
   private static measureStrength(p: string) {
     let _force = 0;
@@ -109,12 +121,7 @@ export class PasswordStrengthBarComponent implements OnChanges {
 
   ngOnChanges(changes: { [propName: string]: SimpleChange }): void {
     let password = changes['passwordToCheck'].currentValue;
-
-    // Accept custom colors if input is valid, otherwise last working collection will be used
-    if (this.barColors && this.barColors.length === 5) {
-      this.colors = this.barColors.slice();
-    }
-
+    this.checkBarColors();
     this.setBarColors(5, '#DDD');
     if (password) {
       let c = this.getStrengthIndexAndColor(password);
