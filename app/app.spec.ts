@@ -45,5 +45,10 @@ describe('App', function () {
       comp.myColors = null;
       fixture.detectChanges();
       expect(bar0.nativeElement.style.backgroundColor).toBe('rgb(255, 153, 0)'); // #F90 == #FF9900
+
+      comp.account.password = 'testinput';
+      comp.myColors = ['#DD2C00', '#FF6D00', '#FFD600', '#AEEA00']; // only 4 items
+      fixture.detectChanges();
+      expect(bar0.nativeElement.style.backgroundColor).toBe('rgb(255, 0, 0)'); // #F00 == #FF0000
     });
 });
