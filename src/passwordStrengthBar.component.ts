@@ -46,19 +46,21 @@ export class PasswordStrengthBarComponent implements OnChanges {
   bar2: string;
   bar3: string;
   bar4: string;
-  private barColorsChecked: boolean = false;
 
-  private colors = ['#F00', '#F90', '#FF0', '#9F0', '#0F0'];
+  private colors: Array<string>;
+  private defaultColors = ['#F00', '#F90', '#FF0', '#9F0', '#0F0'];
+
+  constructor() {
+    this.colors = this.defaultColors;
+  }
 
   private checkBarColors(): void {
-    if (this.barColorsChecked) {
-      return;
-    }
-    // Accept custom colors if input is valid, otherwise last working collection will be used
+    // Accept custom colors if input is valid, otherwise the default colors will be used
     if (this.barColors && this.barColors.length === 5) {
-      this.colors = this.barColors;
+      this.colors = this.barColors.slice();
+    } else {
+      this.colors = this.defaultColors;
     }
-    this.barColorsChecked = true;
   }
 
   private static measureStrength(p: string) {
