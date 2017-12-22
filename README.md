@@ -13,34 +13,34 @@ This an Angular 2 implementation of [AngularJS Directive to test the strength of
 
 `npm install ng2-password-strength-bar --save`
 
-#### 1.1.x Version Update Note
+#### Version Update Note
 
-If you upgrade from v1.0.x to v1.1.x you will need to change the **PasswordStrengthBar** import. There are two options:
+If you upgrade from v1.0.x to v1.1.x (or greater) you will need to change the **PasswordStrengthBar** import. There are two options:
  1. Change to **PasswordStrengthBarModule** and add this to the **imports** section of the @NgModule metadata instead of the declarations (shown below), or
  2. Change to **PasswordStrengthBarComponent** and update the name in the **declarations** section to match.
 
 ## Using the Component
 ### Add Component to Module imports
-```
+```angular2html
 import { PasswordStrengthBarModule } from 'ng2-password-strength-bar';
-...
+//...
 @NgModule({
- ...
+ //...
    declarations: [
         AppComponent,
-        ...
+        //...
     ],
     imports: [
       BrowserModule,
       FormsModule,
       PasswordStrengthBarModule,
-      ...
- ...
+      //...
+ //...
 })
 export class AppModule {}
 ```
 ### Add Component to your Application
-```
+```angular2html
 @Component({
     selector: 'my-app',
     template: `
@@ -52,24 +52,32 @@ export class AppModule {}
                  minlength="5" maxlength="50" required>
             <ng2-password-strength-bar
                 [passwordToCheck]="account.password"
-                [barLabel]="barLabel">
+                [barLabel]="barLabel"
+                [barColors]="myColors">
             </ng2-password-strength-bar>
         </form>
     </div>
   `,
 })
+```
+```angular2html
 export class App {
     public account = {
         password: <string>null
     };
     public barLabel: string = "Password strength:";
+    public myColors = ['#DD2C00', '#FF6D00', '#FFD600', '#AEEA00', '#00C853'];
     // ...
 }
 ```
 ### Input Parameters
-
-\<ng2-password-strength-bar \[**passwordToCheck**\]="account.password"  \[**barLabel**\]="barLabel"\> \</ng2-password-strength-bar\>
-
+```angular2html
+<ng2-password-strength-bar
+  [passwordToCheck]="account.password"
+  [barLabel]="barLabel"
+  [barColors]="myColors">
+</ng2-password-strength-bar>
+```
 #### passwordToCheck (type: string)
 
 - The variable containing the password to check.
@@ -78,11 +86,11 @@ export class App {
 
 - The variable containing the label displayed to the left of the bar.
 
-#### barColors (type: Array<string>, optional)
-
+#### barColors (type: Array\<string\>, optional) 
+_(New in v1.2.0)_
 - The variable can be used to define custom bar colors. This must be an Array of 5 strings!<br>
 Lowest security level picks `colors[0]`, ..., the highest picks `colors[4]`.<br>
-If not specified, the default used is: `['#F00', '#F90', '#FF0', '#9F0', '#0F0']`
+If not specified, the default is: `['#F00', '#F90', '#FF0', '#9F0', '#0F0']`
 
 ## Run the example application locally
 - `git clone https://github.com/rnadler/ng2-password-strength-bar.git`
