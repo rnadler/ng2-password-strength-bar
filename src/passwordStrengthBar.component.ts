@@ -41,6 +41,7 @@ export class PasswordStrengthBarComponent implements OnChanges {
   @Input() passwordToCheck: string;
   @Input() barLabel: string;
   @Input() barColors: Array<string>;
+  @Input() baseColor: string = '#DDD';
 
   bar0: string;
   bar1: string;
@@ -125,7 +126,7 @@ export class PasswordStrengthBarComponent implements OnChanges {
   ngOnChanges(changes: { [propName: string]: SimpleChange }): void {
     let password = changes['passwordToCheck'].currentValue;
     this.checkBarColors();
-    this.setBarColors(5, '#DDD');
+    this.setBarColors(5, this.baseColor);
     if (password) {
       let c = this.getStrengthIndexAndColor(password);
       this.setBarColors(c.idx, c.col);
