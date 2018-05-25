@@ -3,7 +3,7 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
 @Component({
   selector: 'ng2-password-strength-bar',
   styles: [`
-    ul#strengthBar {
+    .strengthBar {
       display: inline;
       list-style: none;
       margin: 0 0 0 15px;
@@ -11,7 +11,7 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
       vertical-align: 2px;
     }
 
-    ul#strengthBar .point {
+    .strengthBar .point {
       background: #DDD;
       border-radius: 2px;
       display: inline-block;
@@ -19,15 +19,15 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
       margin-right: 1px;
       width: 20px;
     }
-    
-    ul#strengthBar .point:last-child {
+
+    .strengthBar .point:last-child {
       margin: 0;
     }
   `],
   template: `
     <div id="strength" #strength>
       <small>{{barLabel}}</small>
-      <ul id="strengthBar">
+      <ul id="strengthBar" class="strengthBar">
         <li id="bar0" class="point" [style.background-color]="bar0"></li>
         <li class="point" [style.background-color]="bar1"></li>
         <li class="point" [style.background-color]="bar2"></li>
@@ -41,6 +41,7 @@ export class PasswordStrengthBarComponent implements OnChanges {
   @Input() passwordToCheck: string;
   @Input() barLabel: string;
   @Input() barColors: Array<string>;
+
   bar0: string;
   bar1: string;
   bar2: string;
