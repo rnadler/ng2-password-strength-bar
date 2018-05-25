@@ -26,7 +26,7 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
   `],
   template: `
     <div id="strength" #strength>
-      <small>{{barLabel}}</small>
+      <small>{{barLabel}}: {{passwordStrength}}</small>
       <ul id="strengthBar" class="strengthBar">
         <li id="bar0" class="point" [style.background-color]="bar0"></li>
         <li class="point" [style.background-color]="bar1"></li>
@@ -42,6 +42,7 @@ export class PasswordStrengthBarComponent implements OnChanges {
   @Input() barLabel: string;
   @Input() barColors: Array<string>;
   @Input() baseColor: string = '#DDD';
+  @Input() strengthLabels: Array<string> = [];
 
   bar0: string;
   bar1: string;
@@ -49,8 +50,12 @@ export class PasswordStrengthBarComponent implements OnChanges {
   bar3: string;
   bar4: string;
 
+  passwordStrength: string;
+
   private colors: Array<string>;
+  private strengths: Array<string>;
   private defaultColors = ['#F00', '#F90', '#FF0', '#9F0', '#0F0'];
+  private defaultStrengths = ['Useless', 'Weak', 'Normal', 'Strong', 'Great!'];
 
   constructor() {
     this.colors = this.defaultColors;
@@ -63,6 +68,9 @@ export class PasswordStrengthBarComponent implements OnChanges {
     } else {
       this.colors = this.defaultColors;
     }
+
+    this.strengths = this.strengthLabels && this.strengthLabels.length === 5 ? this.strengthLabels : this.defaultStrengths;
+    this.passwordStrength = this.strengths[0];
   }
 
   private static measureStrength(p: string) {
@@ -129,6 +137,7 @@ export class PasswordStrengthBarComponent implements OnChanges {
     this.setBarColors(5, this.baseColor);
     if (password) {
       let c = this.getStrengthIndexAndColor(password);
+      this.passwordStrength = this.strengths[c.idx - 1];
       this.setBarColors(c.idx, c.col);
     }
   }
