@@ -54,10 +54,10 @@ export class PasswordStrengthBarComponent implements OnChanges {
   bar3: string;
   bar4: string;
 
-  private strengthLabel: string;
+  strengthLabel: string;
 
   private colors: Array<string>;
-  private strengths: Array<string>;
+  strengths: Array<string>;
   private defaultColors = ['#F00', '#F90', '#FF0', '#9F0', '#0F0'];
   private defaultBaseColor: string = '#DDD';
 
