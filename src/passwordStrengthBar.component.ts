@@ -37,7 +37,7 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
         <li class="point" [style.background-color]="bar3"></li>
         <li class="point" [style.background-color]="bar4"></li>
       </ul>
-      <small [hidden]="!strengths" class="pre">  ({{strengthLabel}})</small>
+      <small [hidden]="!strengths" class="pre">  {{strengthLabel}}</small>
     </div>
   `
 })
@@ -76,7 +76,7 @@ export class PasswordStrengthBarComponent implements OnChanges {
     this.strengths = this.strengthLabels && this.strengthLabels.length === 5 ? this.strengthLabels.slice() : null;
     this.setStrengthLabel(0);
 
-    if(!this.baseColor) {
+    if (!/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(this.baseColor)) {
       this.baseColor = this.defaultBaseColor;
     }
   }
