@@ -13,7 +13,10 @@ import {PasswordStrengthBarModule} from '../index';
                [(ngModel)]="account.password" #password="ngModel"
                minlength="5" maxlength="50" required>
         <ng2-password-strength-bar [passwordToCheck]="account.password" [barColors]="myColors"
-                                   [barLabel]="barLabel"></ng2-password-strength-bar>
+                                   [barLabel]="barLabel"
+                                   [baseColor]="baseColor"
+                                   [strengthLabels]="strengthLabels">
+        </ng2-password-strength-bar>
       </form>
     </div>
   `,
@@ -22,7 +25,9 @@ export class AppComponent {
   public account = {
     password: <string>null
   };
+  public baseColor = '#FFF';
   public barLabel = 'Password strength:';
+  public strengthLabels = ['(Useless)', '(Weak)', '(Normal)', '(Strong)', '(Great!)'];
   public myColors = ['#DD2C00', '#FF6D00', '#FFD600', '#AEEA00', '#00C853'];
 }
 
