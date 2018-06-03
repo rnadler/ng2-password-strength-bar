@@ -93,7 +93,7 @@ export class PasswordStrengthBarComponent implements OnChanges {
     const _flags = [_lowerLetters, _upperLetters, _numbers, _symbols];
 
     let _passedMatches = 0;
-    for (let _flag of _flags) {
+    for (const _flag of _flags) {
       _passedMatches += _flag === true ? 1 : 0;
     }
 
@@ -140,11 +140,11 @@ export class PasswordStrengthBarComponent implements OnChanges {
   }
 
   ngOnChanges(changes: { [propName: string]: SimpleChange }): void {
-    let password = changes['passwordToCheck'].currentValue;
+    const password = changes['passwordToCheck'].currentValue;
     this.checkBarColors();
     this.setBarColors(5, this.baseColor);
     if (password) {
-      let c = this.getStrengthIndexAndColor(password);
+      const c = this.getStrengthIndexAndColor(password);
       this.setStrengthLabel(c.idx - 1);
       this.setBarColors(c.idx, c.col);
     }
