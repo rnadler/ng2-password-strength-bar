@@ -1,4 +1,4 @@
-import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
+import {Component, OnChanges, Input, SimpleChange, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'ng2-password-strength-bar',
@@ -47,6 +47,7 @@ export class PasswordStrengthBarComponent implements OnChanges {
   @Input() barColors: Array<string>;
   @Input() baseColor: string;
   @Input() strengthLabels: Array<string>;
+  @Output() onStrengthChanged: EventEmitter<number> = new EventEmitter<number>();
 
   bar0: string;
   bar1: string;
@@ -145,8 +146,10 @@ export class PasswordStrengthBarComponent implements OnChanges {
     this.setBarColors(5, this.baseColor);
     if (password) {
       const c = this.getStrengthIndexAndColor(password);
-      this.setStrengthLabel(c.idx - 1);
+      const strength = c.idx - 1;
+      this.setStrengthLabel(strength);
       this.setBarColors(c.idx, c.col);
+      this.onStrengthChanged.emit(strength);
     }
   }
 

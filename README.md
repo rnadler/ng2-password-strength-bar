@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/rnadler/ng2-password-strength-bar.svg?branch=master)](https://travis-ci.org/rnadler/ng2-password-strength-bar)
 [![npm version](https://badge.fury.io/js/ng2-password-strength-bar.svg)](https://badge.fury.io/js/ng2-password-strength-bar)
 
-This an Angular 2 implementation of [AngularJS Directive to test the strength of a password](https://blog.brunoscopelliti.com/angularjs-directive-to-test-the-strength-of-a-password/). 
+This an Angular 2 implementation of [AngularJS Directive to test the strength of a password](https://blog.brunoscopelliti.com/angularjs-directive-to-test-the-strength-of-a-password/).
 - See [Angular 2 Password Strength Bar](http://rdn-consulting.com/blog/2016/09/28/angular-2-password-strength-bar/) for details of the changes since the Angular 1 original.
 - See [Publishing an Angular 2 Component NPM Package](http://rdn-consulting.com/blog/2016/12/09/publishing-an-angular-2-component-npm-package/) for some explanation of this project.
 
@@ -88,14 +88,14 @@ export class App {
 
 - The variable containing the label displayed to the left of the bar.
 
-#### barColors (type: Array\<string\>, optional) 
+#### barColors (type: Array\<string\>, optional)
 _(New in v1.2.0)_
 - The variable can be used to define custom bar colors.<br>
 - This must be an Array of 5 strings.<br>
 - Lowest security level picks `colors[0]`, ..., the highest picks `colors[4]`.<br>
 - If not specified, the default is: `['#F00', '#F90', '#FF0', '#9F0', '#0F0']`
 
-#### baseColor (type: string, optional) 
+#### baseColor (type: string, optional)
 _(New in v1.2.1)_
 - The variable can be used to define the color of bars when no strength is applied (i.e. when there is no password text).<br>
 - If not specified, the default is: '#DDD'.<br>
@@ -104,7 +104,7 @@ For example:
 public baseColor = '#FFF';
 ```
 
-#### strengthLabels (type: Array\<string\>, optional) 
+#### strengthLabels (type: Array\<string\>, optional)
 _(New in v1.2.1)_
 - The variable can be used to define a strength label that will be appended to the colored bars.<br>
 - This must be an Array of 5 strings.<br>
@@ -112,6 +112,17 @@ For example:
 ```angular2html
 public strengthLabels = ['(Useless)', '(Weak)', '(Normal)', '(Strong)', '(Great!)'];
 ```
+
+### Output Parameters
+```angular2html
+<ng2-password-strength-bar
+  [passwordToCheck]="account.password"
+  (onStrengthChanged)="strengthChanged($event)">
+</ng2-password-strength-bar>
+```
+#### onStrengthChanged(strength: number)
+- Event triggered when the password changes.
+- Takes a single number parameter (the new password strength).
 
 ## Run the example application locally
 - `git clone https://github.com/rnadler/ng2-password-strength-bar.git`

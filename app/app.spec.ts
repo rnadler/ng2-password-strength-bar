@@ -72,4 +72,14 @@ describe('App', function () {
       fixture.detectChanges();
       expect(bar0.nativeElement.style.backgroundColor).toBe('rgb(221, 221, 221)'); // #DDD
     });
+
+    it('should have the correct strength index on password change', () => {
+      comp.account.password = 'testinput-123';
+      fixture.detectChanges();
+      expect(comp.strength).toEqual(3);
+
+      comp.account.password = 'Testinput-123';
+      fixture.detectChanges();
+      expect(comp.strength).toEqual(4);
+    });
 });

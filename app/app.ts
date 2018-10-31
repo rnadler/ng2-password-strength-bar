@@ -15,7 +15,8 @@ import {PasswordStrengthBarModule} from '../index';
         <ng2-password-strength-bar [passwordToCheck]="account.password" [barColors]="myColors"
                                    [barLabel]="barLabel"
                                    [baseColor]="baseColor"
-                                   [strengthLabels]="strengthLabels">
+                                   [strengthLabels]="strengthLabels"
+                                   (onStrengthChanged)="strengthChanged($event)">
         </ng2-password-strength-bar>
       </form>
     </div>
@@ -29,6 +30,11 @@ export class AppComponent {
   public barLabel = 'Password strength:';
   public strengthLabels = ['(Useless)', '(Weak)', '(Normal)', '(Strong)', '(Great!)'];
   public myColors = ['#DD2C00', '#FF6D00', '#FFD600', '#AEEA00', '#00C853'];
+  public strength = 0;
+
+  strengthChanged(strength: number) {
+    this.strength = strength;
+  }
 }
 
 @NgModule({
