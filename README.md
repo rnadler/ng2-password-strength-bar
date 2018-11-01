@@ -70,16 +70,18 @@ export class App {
     // ...
 }
 ```
-### Input Parameters
+## Parameters
 ```angular2html
 <ng2-password-strength-bar
   [passwordToCheck]="account.password"
   [barLabel]="barLabel"
   [barColors]="myColors"
   [baseColor]="baseColor"
-  [strengthLabels]="strengthLabels">
+  [strengthLabels]="strengthLabels"
+  (onStrengthChanged)="strengthChanged($event)">
 </ng2-password-strength-bar>
 ```
+### Input Parameters
 #### passwordToCheck (type: string)
 
 - The variable containing the password to check.
@@ -114,16 +116,15 @@ public strengthLabels = ['(Useless)', '(Weak)', '(Normal)', '(Strong)', '(Great!
 ```
 
 ### Output Parameters
-```angular2html
-<ng2-password-strength-bar
-  [passwordToCheck]="account.password"
-  (onStrengthChanged)="strengthChanged($event)">
-</ng2-password-strength-bar>
-```
-#### onStrengthChanged(strength: number)
-- Event triggered when the password changes.
-- Takes a single number parameter (the new password strength).
 
+#### onStrengthChanged(strength: number) optional
+- Event triggered when the password changes.
+- Takes a single number parameter (the new password strength with value 0 to 4).
+```angular2html
+strengthChanged(strength: number) {
+  this.strength = strength;
+}
+```
 ## Run the example application locally
 - `git clone https://github.com/rnadler/ng2-password-strength-bar.git`
 - `cd ng2-password-strength-bar`

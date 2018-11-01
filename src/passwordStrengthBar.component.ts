@@ -144,13 +144,14 @@ export class PasswordStrengthBarComponent implements OnChanges {
     const password = changes['passwordToCheck'].currentValue;
     this.checkBarColors();
     this.setBarColors(5, this.baseColor);
+    let strength = 0;
     if (password) {
       const c = this.getStrengthIndexAndColor(password);
-      const strength = c.idx - 1;
+      strength = c.idx - 1;
       this.setStrengthLabel(strength);
       this.setBarColors(c.idx, c.col);
-      this.onStrengthChanged.emit(strength);
     }
+    this.onStrengthChanged.emit(strength);
   }
 
   private setBarColors(count: number, col: string) {

@@ -81,5 +81,10 @@ describe('App', function () {
       comp.account.password = 'Testinput-123';
       fixture.detectChanges();
       expect(comp.strength).toEqual(4);
+
+      comp.strength = 1;
+      comp.account.password = '';  // Event should be emitted even on an empty string
+      fixture.detectChanges();
+      expect(comp.strength).toEqual(0);
     });
 });
