@@ -82,53 +82,40 @@ export class PasswordStrengthBarComponent implements OnChanges {
     }
   }
 
-  private static measureStrength(p: string) {
-    let _force = 0;
-    const _regex = /[$-/:-?{-~!"^_`\[\]]/g; // "
-
-    const _lowerLetters = /[a-z]+/.test(p);
-    const _upperLetters = /[A-Z]+/.test(p);
-    const _numbers = /[0-9]+/.test(p);
-    const _symbols = _regex.test(p);
-
-    const _flags = [_lowerLetters, _upperLetters, _numbers, _symbols];
-
-    let _passedMatches = 0;
-    for (const _flag of _flags) {
-      _passedMatches += _flag === true ? 1 : 0;
+  private static measureStrength(pass: string) {
+    let score = 0;
+    // award every unique letter until 5 repetitions
+    let letters = {};
+    for (let i = 0; i< pass.length; i++) {
+      letters[pass[i]] = (letters[pass[i]] || 0) + 1;
+      score += 5.0 / letters[pass[i]];
     }
+    // bonus points for mixing it up
+    let variations = {
+      digits: /\d/.test(pass),
+      lower: /[a-z]/.test(pass),
+      upper: /[A-Z]/.test(pass),
+      nonWords: /\W/.test(pass),
+    };
 
-    _force += 2 * p.length + ((p.length >= 10) ? 1 : 0);
-    _force += _passedMatches * 10;
-
-    // penality (short password)
-    _force = (p.length <= 6) ? Math.min(_force, 10) : _force;
-
-    // penality (poor variety of characters)
-    _force = (_passedMatches === 1) ? Math.min(_force, 10) : _force;
-    _force = (_passedMatches === 2) ? Math.min(_force, 20) : _force;
-    _force = (_passedMatches === 3) ? Math.min(_force, 40) : _force;
-
-    return _force;
-
+    let variationCount = 0;
+    for (let check in variations) {
+      variationCount += (variations[check]) ? 1 : 0;
+    }
+    score += (variationCount - 1) * 10;
+    return Math.trunc(score);
   }
 
-  private getColor(s: number) {
+  private getColor(score: number) {
     let idx = 0;
-    if (s <= 10) {
-      idx = 0;
-    }
-    else if (s <= 20) {
-      idx = 1;
-    }
-    else if (s <= 30) {
-      idx = 2;
-    }
-    else if (s <= 40) {
-      idx = 3;
-    }
-    else {
+    if (score > 90) {
       idx = 4;
+    } else if (score > 70) {
+      idx = 3;
+    } else if (score >= 40) {
+      idx = 2;
+    } else if (score >= 20) {
+      idx = 1;
     }
     return {
       idx: idx + 1,
