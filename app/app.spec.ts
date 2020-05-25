@@ -2,9 +2,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By, BrowserModule } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app';
-import { PasswordStrengthBarModule } from '../index'
+import { PasswordStrengthBarModule } from 'ng2-password-strength-bar';
 
 describe('App', function () {
     let de: DebugElement;
