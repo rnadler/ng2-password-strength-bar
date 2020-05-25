@@ -19,8 +19,7 @@
     "build:lib": "ng build ng2-password-strength-bar",
     "build:lib:prod": "npm run build:lib -- --prod",
     "build:lib:watch": "npm run build:lib -- --watch",
-    "test": "ng test app",
-    "test-once": "npm run build:lib:prod && npm run test",
+    "test-once": "ng test app",
     "lint": "ng lint",
     "postinstall": "ngcc"
   },
