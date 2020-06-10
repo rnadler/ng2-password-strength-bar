@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '5.4.1'
+  - '10.4.1'
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq xvfb gtk2-engines-pixbuf xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
@@ -9,6 +9,6 @@ before_script:
   - "Xvfb -ac :99 -screen 0 1280x1024x16 &"
   - sleep 3 # give xvfb some time to start
 addons:
-   firefox: "45.0.2"
+   firefox: "latest"
 script:
   - npm run test-once
