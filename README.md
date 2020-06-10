@@ -9,6 +9,15 @@ This an Angular 2 implementation of [AngularJS Directive to test the strength of
 
 [Try it live!](https://plnkr.co/edit/z0x5gG?p=preview)
 
+## Angular 9 Support
+
+If you are using Angular 9+ you will need to use [ng9-password-strength-bar](https://www.npmjs.com/package/ng9-password-strength-bar).
+
+The only configuration differences between the ng2 and ng9 versions are these name changes:
+
+- ng2-password-strength-bar --> **ng9-password-strength-bar**
+- PasswordStrengthBarModule --> **Ng9PasswordStrengthBarModule**
+
 ## Install in your project
 
 `npm install ng2-password-strength-bar --save`
