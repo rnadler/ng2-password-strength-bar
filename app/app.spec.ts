@@ -31,6 +31,9 @@ describe('App', function () {
     it('App should have expected text', () => {
         fixture.detectChanges();
         expect(de.nativeElement.innerText).toMatch(/Password strength:/);
+        comp.barLabel = 'Seguridad de la contraseña:';
+        fixture.detectChanges();
+        expect(de.nativeElement.innerText).toMatch(/Seguridad de la contraseña:/);
     });
 
     it('should correctly set custom bar colors', () => {
